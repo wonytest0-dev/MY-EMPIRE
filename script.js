@@ -32,8 +32,52 @@ document.addEventListener("DOMContentLoaded", function() {
                 }
             });
 
+            document.addEventListener("DOMContentLoaded", function() {
+
+    const assistive = document.getElementById("hamburger");
+
+    let isDragging = false;
+    let offsetX, offsetY;
+
+    // DESKTOP
+    assistive.addEventListener("mousedown", function(e) {
+        isDragging = true;
+        offsetX = e.clientX - assistive.getBoundingClientRect().left;
+        offsetY = e.clientY - assistive.getBoundingClientRect().top;
+    });
+
+    document.addEventListener("mousemove", function(e) {
+        if (!isDragging) return;
+
+        assistive.style.left = (e.clientX - offsetX) + "px";
+        assistive.style.top = (e.clientY - offsetY) + "px";
+        assistive.style.right = "auto";
+    });
+
+    document.addEventListener("mouseup", function() {
+        isDragging = false;
+    });
+
+    // MOBILE
+    assistive.addEventListener("touchstart", function(e) {
+        const touch = e.touches[0];
+        offsetX = touch.clientX - assistive.getBoundingClientRect().left;
+        offsetY = touch.clientY - assistive.getBoundingClientRect().top;
+    });
+
+    assistive.addEventListener("touchmove", function(e) {
+        const touch = e.touches[0];
+
+        assistive.style.left = (touch.clientX - offsetX) + "px";
+        assistive.style.top = (touch.clientY - offsetY) + "px";
+        assistive.style.right = "auto";
+    });
+
+});
+
             group.classList.toggle("active");
         });
     });
+
 
 });
