@@ -32,7 +32,12 @@ document.addEventListener("DOMContentLoaded", function() {
                 }
             });
 
-            document.addEventListener("DOMContentLoaded", function() {
+            group.classList.toggle("active");
+        });
+    });
+
+});
+document.addEventListener("DOMContentLoaded", function() {
 
     const assistive = document.getElementById("hamburger");
 
@@ -72,12 +77,5 @@ document.addEventListener("DOMContentLoaded", function() {
         assistive.style.top = (touch.clientY - offsetY) + "px";
         assistive.style.right = "auto";
     });
-
-});
-
-            group.classList.toggle("active");
-        });
-    });
-
 
 });
