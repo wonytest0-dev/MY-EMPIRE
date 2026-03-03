@@ -565,4 +565,8 @@ body {
     50% { transform: translateX(6px); }
     100% { transform: translateX(0); }
 }
+.spotify-wrapper {
+    position: relative;
+    z-index: 1;
+}
 
