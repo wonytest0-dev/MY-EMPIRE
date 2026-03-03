@@ -22,6 +22,7 @@ body {
     text-align: center;
     padding-top: 300;
     height: 100px;
+    z-index: 9999;
 }
 
 .title {
@@ -564,3 +565,4 @@ body {
     50% { transform: translateX(6px); }
     100% { transform: translateX(0); }
 }
+
